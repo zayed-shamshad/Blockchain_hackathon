@@ -20,7 +20,7 @@ const ERC20App = () => {
   const [menu, setMenu] = useState(Menu.LoginPage);
   const [tokenAddress, setTokenAddress] = useState("");
   const [token, setToken] = useState("");
-
+  const [redirectTo, setRedirectTo] = useState("");
   const onClickCreate = () => setMenu(Menu.Create);
   const onClickCreateSample = ({ token }) => setMenu(Menu.CreateSample);
   const importToken = (address) => {
@@ -30,7 +30,7 @@ const ERC20App = () => {
 
   return (
     <div>
-      {menu !== Menu.Main && menu !== Menu.LoginPage && (
+      {menu !== Menu.Main && menu !== Menu.Dashboard && menu !== Menu.LoginPage  && (
         <Box sx={{ height: "5ch" }}>
           <Link href="#" onClick={() => setMenu(Menu.Main)} sx={{ m: 1 }}>
             Back
@@ -41,7 +41,7 @@ const ERC20App = () => {
         <Dashboard token={token} importToken={importToken} />
       )}
       {menu === Menu.LoginPage && (
-        <Login setMenu={setMenu} main={Menu.Dashboard} />
+        <Login setMenu={setMenu} main={Menu} />
       )}
       {menu === Menu.Main && (
         <ERC20MainMenu
