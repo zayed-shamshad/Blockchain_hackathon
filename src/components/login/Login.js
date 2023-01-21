@@ -14,13 +14,14 @@ const Login = ({setMenu, main}) => {
       signInWithPopup(auth, provider).then((data)=>{
           console.log('Logged in as: ' + data.user.displayName);
           console.log(data);
+          setMenu(main.Dashboard);
       })
     }
 
     const Enter = (e) => {
         e.preventDefault();
         if(userName === "user" && password === "password"){
-            setMenu(main);
+            setMenu(main.Main);
         }
     };
     const currentView = () => {
