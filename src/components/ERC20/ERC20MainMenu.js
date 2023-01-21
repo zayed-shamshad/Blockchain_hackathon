@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Button, Grid, TextField } from '@mui/material';
+import tokenImg from './token.svg'
+import './admin.css'
 
 const ERC20MainMenu = ({ onClickCreate, importToken }) => {
     const [tokenAddress, setTokenAddress] = useState("");
@@ -31,8 +33,9 @@ const ERC20MainMenu = ({ onClickCreate, importToken }) => {
                 >
                     Import token
                 </Button>
-                
+                <img src= {tokenImg}/>
             </Grid>
+            
         </Grid>
     )
 }
