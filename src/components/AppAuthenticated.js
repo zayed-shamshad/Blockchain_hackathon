@@ -23,7 +23,7 @@ const AppAuthenticated = () => {
                     width: `100%`, bgcolor: 'black',display:"flex"}}>
                 <Toolbar>
                     <Typography variant="h6" noWrap component="div">
-                        Institute token reward system
+                        Institute Reward System
                     </Typography>
                 </Toolbar>
             </AppBar>
