@@ -1,10 +1,14 @@
 import { useState } from 'react'
 import { Typography, Button, TextField, Grid, CircularProgress, Alert } from '@mui/material'
 import SubsidyTokens from "../SubsidyTokens/SubsidyTokens";
+import { collection, addDoc } from "firebase/firestore";
+
+import {db } from "../login/config.js";
 
 const ERC20Token = require("./ERC20Token");
 const { applyDecimals, web3 } = require('../../utils/ethereumAPI');
 const web3Token = new web3.eth.Contract(ERC20Token.abi);
+
 
 const ERC20CreateSample = ({ importToken, token }) => {
     const defaultDecimals = "18";
@@ -15,19 +19,31 @@ const ERC20CreateSample = ({ importToken, token }) => {
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
+    const onClickActionn = async () => {
+        const docRef = await addDoc(collection(db, "tokenid"), {
+            tokenstring: "zaidshamshad"
+        });
+        console.log("Document written with ID: ", "zaidshamshad");
+    };
 
     const onClickAction = async () => {
+        const docRef = await addDoc(collection(db, "tokenid"), {
+            tokenstring: "zaidshamshad"
+        });
+        console.log("Document written with ID: ", "zaidshamshad");
         if(successMessage) {
             importToken(web3Token.options.address);
             return;
         }
-
         setLoading(true);
         setErrorMessage("");
         setSuccessMessage("");
 
         const accounts = await web3.eth.getAccounts();
         try {
+           
+
+                
             const result = await web3Token
                             .deploy({
                                 data: ERC20Token.bytecode,
@@ -81,7 +97,7 @@ const ERC20CreateSample = ({ importToken, token }) => {
                 <Button
                     variant="contained"
                     sx={{ m: 1 }}
-                    onClick={() => onClickAction()}
+                    onClick={() => onClickActionn()}
                     disabled={loading}
                 >
                     {successMessage ? "Token info" : (loading ? null : "Create")}
