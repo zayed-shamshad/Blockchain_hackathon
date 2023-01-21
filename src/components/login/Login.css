@@ -88,6 +88,8 @@
 	 background: #fff;
 	 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
+
+
  section#entry-page form button:hover {
 	 background-color: #eef;
 	 border: 1px solid #aaf;
@@ -104,6 +106,24 @@
 		 padding-bottom: 0;
 		 text-align: right !important;
 	}
+}
+.right{
+	align-items: flex-end;
+}
+img{
+	/* align-self:right; */
+	padding-left: 50px; 
+	
+	
+}
+.right{
+	margin-left: 50px;
+	margin-right: 10px;
+}
+
+.right h2{
+	align-self: center;
+	margin-left: 100px;
 }
  /* @keyframes Gradient {
 	 0% {

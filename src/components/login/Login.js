@@ -42,7 +42,11 @@ const Login = ({setMenu, main}) => {
         <section id="entry-page">
           {currentView()}
           <div className="right">
-              <img src={gift} />
+              <h2>A gift for your Efforts</h2>
+              <center><div align="right">
+              <img src={gift} /> 
+              </div>
+              </center>
           </div>
         </section>
       )
