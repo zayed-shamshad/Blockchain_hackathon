@@ -1,0 +1,94 @@
+
+svg {
+    width: 130px;
+    height: 40px;
+}
+
+.round,
+.svg,
+.highlight {
+    max-width: 960px;
+    margin:0 auto;
+}
+
+.round a {
+    color: crimson;
+    text-decoration: none;
+    font-family: Helvetica;
+}
+
+.round .button {
+  font-size: 20px;
+  text-align:center;
+    display: inline-block;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid crimson;
+    transition: color .5s;
+}
+
+.round .button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: crimson;
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.round .button:hover {
+    color: #fff;
+    transition:0.5s;
+    background: crimson;
+}
+
+.round .button:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+}
+
+.round .button:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+@keyframes draw1 {
+    0% {
+            stroke-dasharray: 300;
+            stroke-dashoffset: 700;
+            stroke-width: 4px;
+    }
+    75% {
+            stroke-dasharray: 900;
+            stroke-width: 1px;
+    }
+    100% {
+            stroke-dasharray: 900;
+            stroke-width: 1px;
+    }
+}
+
+.highlight .button {
+    display: inline-block;
+    color: #fff;
+    background: crimson;
+    margin: 20px;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight .button:hover:before {
+    left: 150px;
+    transition: all .5s;
+}
+.highlight {margin-bottom:100px;}

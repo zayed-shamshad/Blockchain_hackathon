@@ -1,0 +1,42 @@
+.token-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 50px;
+    position: relative;
+}
+          
+.token {
+    text-align: center;
+    padding: 6%;
+    position: relative;
+    font-size: 30px;
+    width: 350px;
+}
+
+@media (max-width: 1200px) {
+    .token-grid { 
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .token{
+        width:auto;
+    }
+}   
+
+@media (max-width: 900px) {
+    .token-grid { 
+        grid-template-columns: 1fr 1fr;
+    }
+    .token{
+        width:auto;
+    }
+}  
+
+@media (max-width: 450px) {
+    .token-grid { 
+        grid-template-columns: 1fr;
+    }
+    .token{
+        width:auto;
+    }
+}   
