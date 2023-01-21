@@ -9,9 +9,10 @@ const Login = ({setMenu, main}) => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleClick =()=>{
+    const handleClick =(e)=>{
+      e.preventDefault();
       signInWithPopup(auth, provider).then((data)=>{
-          console.log("Google Login Success");
+          console.log('Logged in as: ' + data.user.displayName);
           console.log(data);
       })
     }
@@ -42,10 +43,8 @@ const Login = ({setMenu, main}) => {
                   </ul>
                 </fieldset>
                 <button onClick={(e) => Enter(e)}>Login</button>
+                <button onClick={handleClick}>Signin with Google</button>
               </form>
-              <button onClick={handleClick}>
-              Signin with Google
-              </button>
             </div>
           )
     };
