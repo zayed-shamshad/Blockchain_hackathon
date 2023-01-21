@@ -87,8 +87,6 @@
 	 background: #fff;
 	 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-
-
  section#entry-page form button:hover {
 	 background-color: #eef;
 	 border: 1px solid #aaf;
@@ -116,13 +114,13 @@ img{
 	
 }
 .right{
-	margin-left: 50px;
 	margin-right: 10px;
 }
 
 .right h2{
 	align-self: center;
 	margin-left: 100px;
+	color:white;
 }
  /* @keyframes Gradient {
 	 0% {
