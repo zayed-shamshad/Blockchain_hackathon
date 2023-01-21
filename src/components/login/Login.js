@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Login.css';
+import gift from './gift.svg'
 
 const Login = ({setMenu, main}) => {
 
@@ -16,7 +17,7 @@ const Login = ({setMenu, main}) => {
     const currentView = () => {
           return (
             <form>
-              <h2>Subsidy Distribution Portal</h2>
+              <h2>Institute Reward System</h2>
               <fieldset>
                 <legend>Log In</legend>
                 <ul>
@@ -32,12 +33,17 @@ const Login = ({setMenu, main}) => {
               </fieldset>
               <button onClick={(e) => Enter(e)}>Login</button>
             </form>
+            
           )
     };
+
   
       return (
         <section id="entry-page">
           {currentView()}
+          <div className="right">
+              <img src={gift} />
+          </div>
         </section>
       )
 };
