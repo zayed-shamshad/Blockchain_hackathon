@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import ItemCard from "./item";
 import { Typography } from "@mui/material";
 import Transfer1 from "../ERC20/ImportMenu/transfer2";
+import Transfer3 from "../ERC20/ImportMenu/transfer3";
 const Dashboard = (s) => {
   const ERC20Token = require("../ERC20/ERC20Token");
   const { web3, applyDecimals } = require("../../utils/ethereumAPI");
@@ -107,6 +108,12 @@ const Dashboard = (s) => {
           ))}
         </Grid>
       </Box>
+
+      <Transfer3
+        web3Token={web3Token}
+        tokenData={tokenData}
+        refreshDataGrid={refreshDataGrid}
+      />
     </>
   );
 };
