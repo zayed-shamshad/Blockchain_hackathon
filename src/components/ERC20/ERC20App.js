@@ -41,7 +41,7 @@ const ERC20App = () => {
         <Dashboard token={token} importToken={importToken} />
       )}
       {menu === Menu.LoginPage && (
-        <Login setMenu={setMenu} main={Menu.Dashboard} />
+        <Login setMenu={setMenu} main={Menu.Main} />
       )}
       {menu === Menu.Main && (
         <ERC20MainMenu
