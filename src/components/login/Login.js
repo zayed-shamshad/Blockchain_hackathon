@@ -12,7 +12,6 @@ const Login = ({setMenu, main}) => {
             setMenu(main);
         }
     };
-
     const currentView = () => {
           return (
             <form>

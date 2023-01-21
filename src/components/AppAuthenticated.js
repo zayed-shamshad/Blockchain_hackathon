@@ -19,16 +19,17 @@ const AppAuthenticated = () => {
             <CssBaseline />
             <AppBar
                 position="fixed"
-                sx={{ width: `100%`}}>
+                sx={{
+                    width: `100%`, bgcolor: 'black',display:"flex"}}>
                 <Toolbar>
                     <Typography variant="h6" noWrap component="div">
-                        Subsidy Distribution Management
+                        Institute token reward system
                     </Typography>
                 </Toolbar>
             </AppBar>
             <Box
                 component="main"
-                sx={{ flexGrow: 1, bgcolor: 'background.default', p:3 }}>
+                sx={{ flexGrow: 1, bgcolor: 'white', p:3 }}>
                     <Toolbar />
                 {ERCIndex === allERCs.findIndex((x) => x === ERC.ERC20) && <ERC20App />}
             </Box>
