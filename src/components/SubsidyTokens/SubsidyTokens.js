@@ -3,9 +3,7 @@ import './SubsidyTokens.css';
 import SubsidyToken from './SubsidyToken/SubsidyToken';
 import {MyTokens} from './TokenData';
 
-
 const SubsidyTokens = ({token, setToken, onClickCreateSample}) => {
-
     return (
         <div className="token-grid">
             {MyTokens.map((m) =>{   
