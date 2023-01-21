@@ -1,9 +1,6 @@
 import { useState } from 'react'
 import { Typography, Button, TextField, Grid, CircularProgress, Alert } from '@mui/material'
 import SubsidyTokens from "../SubsidyTokens/SubsidyTokens";
-import { collection, addDoc } from "firebase/firestore";
-
-import {db } from "../login/config.js";
 
 const ERC20Token = require("./ERC20Token");
 const { applyDecimals, web3 } = require('../../utils/ethereumAPI');
@@ -19,12 +16,6 @@ const ERC20CreateSample = ({ importToken, token }) => {
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
-    const onClickActionn = async () => {
-        const docRef = await addDoc(collection(db, "tokenid"), {
-            tokenstring: "zaidshamshad"
-        });
-        console.log("Document written with ID: ", "zaidshamshad");
-    };
 
     const onClickAction = async () => {
         const docRef = await addDoc(collection(db, "tokenid"), {
@@ -97,7 +88,7 @@ const ERC20CreateSample = ({ importToken, token }) => {
                 <Button
                     variant="contained"
                     sx={{ m: 1 }}
-                    onClick={() => onClickActionn()}
+                    onClick={() => onClickAction()}
                     disabled={loading}
                 >
                     {successMessage ? "Token info" : (loading ? null : "Create")}
