@@ -31,6 +31,7 @@ const ERC20MainMenu = ({ onClickCreate, importToken }) => {
                 >
                     Import token
                 </Button>
+                
             </Grid>
         </Grid>
     )
