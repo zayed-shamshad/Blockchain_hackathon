@@ -51,7 +51,7 @@ const ERC20Create = ({ importToken , token, setToken, onClickCreateSample}) => {
             </Grid>
             <Grid item xs={12}>
                 <Typography variant="h6" noWrap component="div" sx={{ m: 1 }}>
-                    Create Custom Subsidy token
+                    Create Custom token
                 </Typography>
             </Grid>
             <Grid item xs={12}>
