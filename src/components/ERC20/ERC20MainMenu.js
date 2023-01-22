@@ -40,7 +40,7 @@ const ERC20MainMenu = ({ onClickCreate, importToken }) => {
                     Import token
                 </Button>
                 
-            </Grid>
+            </Grid>    
             </div>
             <div className='Image' align='right'>
     <img src= {tokenImg}/>
