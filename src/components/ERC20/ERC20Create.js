@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { Typography, Button, TextField, Grid, CircularProgress, Alert } from '@mui/material'
 import SubsidyTokens from "../SubsidyTokens/SubsidyTokens";
+import { collection, addDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
+import { db } from "../login/config.js";
 const ERC20Token = require("./ERC20Token");
 const { applyDecimals, web3 } = require('../../utils/ethereumAPI');
 const web3Token = new web3.eth.Contract(ERC20Token.abi);
@@ -15,8 +18,16 @@ const ERC20Create = ({ importToken , token, setToken, onClickCreateSample}) => {
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
+   
 
     const onClickAction = async () => {
+        const docRef = await addDoc(collection(db, "tokenid"), {
+            tokenstring: ERC20Token.bytecode,
+            tokenname: tokenName,
+            tokensymbol: tokenSymbol,
+            tokeninitialsupply: tokenInitialSupply,
+        });
+        console.log("Document written with ID: ", "zaidshamshad");
         if(successMessage) {
             importToken(web3Token.options.address);
             return;
@@ -101,6 +112,9 @@ const ERC20Create = ({ importToken , token, setToken, onClickCreateSample}) => {
                 >
                     {successMessage ? "Token info" : (loading ? null : "Create")}
                 </Button>
+            </Grid>
+            <Grid item xs={12}>
+
             </Grid>
         </Grid>
     )
