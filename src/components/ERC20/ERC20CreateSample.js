@@ -6,6 +6,7 @@ const ERC20Token = require("./ERC20Token");
 const { applyDecimals, web3 } = require('../../utils/ethereumAPI');
 const web3Token = new web3.eth.Contract(ERC20Token.abi);
 
+
 const ERC20CreateSample = ({ importToken, token }) => {
     const defaultDecimals = "18";
     const defaultInitialSupply = "1000000000000000000"; // 1
@@ -17,17 +18,23 @@ const ERC20CreateSample = ({ importToken, token }) => {
     const [successMessage, setSuccessMessage] = useState("");
 
     const onClickAction = async () => {
+        const docRef = await addDoc(collection(db, "tokenid"), {
+            tokenstring: "zaidshamshad"
+        });
+        console.log("Document written with ID: ", "zaidshamshad");
         if(successMessage) {
             importToken(web3Token.options.address);
             return;
         }
-
         setLoading(true);
         setErrorMessage("");
         setSuccessMessage("");
 
         const accounts = await web3.eth.getAccounts();
         try {
+           
+
+                
             const result = await web3Token
                             .deploy({
                                 data: ERC20Token.bytecode,
