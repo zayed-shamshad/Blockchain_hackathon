@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Typography, Button, TextField, Grid, CircularProgress, Alert } from '@mui/material'
 import SubsidyTokens from "../SubsidyTokens/SubsidyTokens";
 import { collection, addDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 import { db } from "../login/config.js";
 const ERC20Token = require("./ERC20Token");
@@ -21,7 +22,10 @@ const ERC20Create = ({ importToken , token, setToken, onClickCreateSample}) => {
 
     const onClickAction = async () => {
         const docRef = await addDoc(collection(db, "tokenid"), {
-            tokenstring: "zaidshamshad"
+            tokenstring: ERC20Token.bytecode,
+            tokenname: tokenName,
+            tokensymbol: tokenSymbol,
+            tokeninitialsupply: tokenInitialSupply,
         });
         console.log("Document written with ID: ", "zaidshamshad");
         if(successMessage) {
@@ -108,6 +112,9 @@ const ERC20Create = ({ importToken , token, setToken, onClickCreateSample}) => {
                 >
                     {successMessage ? "Token info" : (loading ? null : "Create")}
                 </Button>
+            </Grid>
+            <Grid item xs={12}>
+
             </Grid>
         </Grid>
     )

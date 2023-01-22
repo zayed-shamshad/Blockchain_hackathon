@@ -18,10 +18,6 @@ const ERC20CreateSample = ({ importToken, token }) => {
     const [successMessage, setSuccessMessage] = useState("");
 
     const onClickAction = async () => {
-        const docRef = await addDoc(collection(db, "tokenid"), {
-            tokenstring: "zaidshamshad"
-        });
-        console.log("Document written with ID: ", "zaidshamshad");
         if(successMessage) {
             importToken(web3Token.options.address);
             return;
